@@ -515,18 +515,61 @@ var ParticlePool = (function() {
 })(document.getElementById('pinkboard'));
 
   </script>
-  <script>
-    function Image(){
-      var img = document.createElement("img");
-      img.src = 'src/img/BTNY0992.JPG';
-      img.width = 150;
-      img.height = 150;
-      img.style.marginLeft=screen.width/2-75+"px";
-      img.style.marginTop=screen.height/2-150+"px";
-      document.body.appendChild(img);
-    }
   
-    Image();
+  <script>
+
+    const imgFolder = './src/img/';
+    const videoFolder = './src/vid/';
+
+    function Image(src, x, y){
+      var img = document.createElement("img");
+      img.style.opacity = ( 0.5 );
+      img.style.MozOpacity = ( 0.5 );
+      img.style.KhtmlOpacity = ( 0.5 );
+      img.style.filter = 'alpha(opacity=0.5)';
+      img.src = imgFolder + src;
+      //document.write(img.src);
+      img.width = 200;
+      img.height = 300;
+      img.style.marginLeft=x+"px";
+      img.style.marginTop=y+"px";
+      document.body.appendChild(img);
+      setTimeout(function() {document.body.removeChild(img);}, 5000);
+      //img.parentNode.removeChild(img);
+
+    }
+
+    function Video(src, x, y) {
+        const video = document.createElement('video');
+
+        video.src = videoFolder + src;
+
+
+        video.controls = false;
+        video.muted = false;
+        video.autoplay=true;
+        video.autofocus=true;
+        video.height = 240; // in px
+        video.width = 320; // in px
+        video.style.marginLeft=x+"px";
+        video.style.marginTop=y+"px";
+        video.loop=true;
+
+        document.body.appendChild(video);
+    }
+
+    function display(){
+      //const arr = ['1B4C0BBD-4D9F-4ACB-97DE-4705D0BF2BC0.jpeg','638CC4D3-010F-413A-8CC9-2BA6636ED42B.jpg','IMG_0224.JPG','IMG_1659.JPG','IMG_1831.JPG','IMG_1969.JPG','IMG_2260.PNG','IMG_2833.jpeg','IMG_2872.jpeg','IMG_3037(1).JPG','IMG_3037.JPG','IMG_3192.JPG','IMG_3196.JPG','IMG_3756.JPG','IMG_4878.JPG','IMG_6935.jpg','IMG_8472.JPG','IMG_9256.JPG','IMG_9305.JPG','IMG_9390.JPG','IMG_9559.JPG','IMG_9615.JPG','TOAN4123.jpeg','_MG_8186.jpeg','_MG_8273.jpeg'];
+
+       //for(src in arr) {
+      Video('1.mp4', screen.width/2 - 160, screen.height/2 - 200);
+         //document.writeln(arr[src]);
+       //}
+    }
+
+    display();
+
+
   </script>
 
  </BODY>
