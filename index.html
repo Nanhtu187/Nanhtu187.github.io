@@ -548,7 +548,6 @@ var ParticlePool = (function() {
         video.controls = false;
         video.muted = false;
         video.autoplay=true;
-        video.autofocus=true;
         video.height = 240; // in px
         video.width = 320; // in px
         video.style.marginLeft=x+"px";
@@ -556,19 +555,14 @@ var ParticlePool = (function() {
         video.loop=true;
 
         document.body.appendChild(video);
+
     }
 
     function display(){
-      //const arr = ['1B4C0BBD-4D9F-4ACB-97DE-4705D0BF2BC0.jpeg','638CC4D3-010F-413A-8CC9-2BA6636ED42B.jpg','IMG_0224.JPG','IMG_1659.JPG','IMG_1831.JPG','IMG_1969.JPG','IMG_2260.PNG','IMG_2833.jpeg','IMG_2872.jpeg','IMG_3037(1).JPG','IMG_3037.JPG','IMG_3192.JPG','IMG_3196.JPG','IMG_3756.JPG','IMG_4878.JPG','IMG_6935.jpg','IMG_8472.JPG','IMG_9256.JPG','IMG_9305.JPG','IMG_9390.JPG','IMG_9559.JPG','IMG_9615.JPG','TOAN4123.jpeg','_MG_8186.jpeg','_MG_8273.jpeg'];
-
-       //for(src in arr) {
       Video('1.mp4', screen.width/2 - 160, screen.height/2 - 200);
-         //document.writeln(arr[src]);
-       //}
     }
 
     display();
-
 
   </script>
 
